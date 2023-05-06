@@ -1,19 +1,19 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import styled from "styled-components";
+import styled from "styled-components"
 
-const contact = () => {
+const recipes = () => {
   return (
     <Layout>
         <Wrapper>
-          <h2>Contact page</h2>
+            <h2>recipes page</h2>
         </Wrapper>
     </Layout>
   );
 }
 
 const Wrapper = styled.div `
+
 `;
 
-
-export default contact;
+export default recipes;

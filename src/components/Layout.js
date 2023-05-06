@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { Children } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const Layout = ({birds}) => {
+const Layout = ({children}) => {
   return (
     <>
       <Navbar></Navbar>
-      {birds}
+      {children}
       <Footer></Footer>
     </>
   );
