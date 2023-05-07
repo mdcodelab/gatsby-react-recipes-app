@@ -1,18 +1,22 @@
 import * as React from "react"
 import {Link} from "gatsby";
 import Layout from "../components/Layout";
-import styled from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
 
 
 export default function Home() {
   return (
     <Layout>
-      <Wrapper>
-        <h1>hello from home page</h1>
-      </Wrapper>
+      <main className="page">
+        <header className="hero">
+          <div className="main-hero">
+            <div className="image-hero"></div>
+            <h2>Your Recipes Heaven</h2>
+            <h4>No Fluff, just Recipes</h4>
+          </div>
+        </header>
+      </main>
     </Layout>
   );
 }
 
-const Wrapper = styled.div `
-`;
