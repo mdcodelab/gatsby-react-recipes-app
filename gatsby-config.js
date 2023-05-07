@@ -15,5 +15,8 @@ module.exports = {
         // Add any options here
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 };
