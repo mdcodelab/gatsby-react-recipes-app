@@ -493,7 +493,7 @@ div.main-hero {
 }
 
 .main-hero {
-  background-image: url("../img/main.jpg");
+  background-image: url("../other_img/main.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

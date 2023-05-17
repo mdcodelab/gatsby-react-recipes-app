@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "gatsby";
 import {FiAlignJustify} from "react-icons/fi";
-import logo from "../assets/img/logo.png";
+import logo from "../assets/other_img/logo.png";
 
 const Navbar = () => {
 const [show, setShow]=React.useState(true);

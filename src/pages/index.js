@@ -2,6 +2,7 @@ import * as React from "react"
 import {Link} from "gatsby";
 import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
+import Gallery from "../components/Gallery";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
             <h4>No Fluff, just Recipes</h4>
           </div>
         </header>
+        <Gallery></Gallery>
       </main>
     </Layout>
   );
