@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage} from "gatsby-plugin-image";
 import styled from "styled-components";
 
 const query = graphql`
@@ -19,6 +19,7 @@ const query = graphql`
 function Gallery() {
   const data = useStaticQuery(query);
   const nodes = data.allFile.nodes;
+
   console.log(data);
 
   return (
@@ -26,9 +27,10 @@ function Gallery() {
       <h2>My gallery</h2>
       <div>
         {nodes.map((image, index) => (
+            //const path=getImage(image);
           <article key={index}>
             <GatsbyImage
-              image={image.childImageSharp.gatsbyImageData}alt={image.name} className="gallery-img"/>
+              image={getImage(image)}alt={image.name} className="gallery-img"/>
             <p>{image.name}</p>
           </article>
         ))}
