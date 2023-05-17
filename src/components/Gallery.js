@@ -1,26 +1,30 @@
-import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from "gatsby-plugin-image"; //for dynamic images
 
-const Gallery = () => {
-  const data = useStaticQuery(graphql`
+
+  const query = graphql`
     query {
-      allFile(filter: { extension: { ne: "svg" } }) {
+      allFile {
         nodes {
           name
           childImageSharp {
-            gatsbyImageData(
-              layout: FIXED
-              placeholder: BLURRED
-              transformOptions: { grayscale: true }
-            )
+            gatsbyImageData(layout: FIXED, placeholder: BLURRED, width: 200)
           }
         }
       }
     }
-  `);
-  console.log(data);
-  return <pre>{JSON.stringify(data, null, 4)}</pre>;
-};
+  `;
+
+function Gallery() {
+    const data=useStaticQuery(query);
+    console.log(data);
+  return (
+    <div>
+      
+    </div>
+  );
+}
 
 export default Gallery;
+
