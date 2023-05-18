@@ -7,7 +7,13 @@
 
 /**
  * @type {import('gatsby').GatsbyConfig}
+ * 
  */
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: "The Recipes Room",
@@ -20,6 +26,7 @@ module.exports = {
       { name: "john", location: "boston" },
     ],
   },
+  
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
@@ -38,6 +45,14 @@ module.exports = {
         // Path to the directory
         path: `${__dirname}/src/assets/img`,
       },
-    }, 
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `t3wqqju9q5n4`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_API_KEY
+      },
+    },
   ],
 };
