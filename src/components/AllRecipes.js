@@ -29,10 +29,10 @@ const AllRecipes = () => {
     console.log(recipes);  //arrray of objects
 
   return (
-    <div>
-      <RecipesList recipes={recipes}></RecipesList>
+    <section className="recipes-container">
       <TagsList recipes={recipes}></TagsList>
-    </div>
+      <RecipesList recipes={recipes}></RecipesList>
+    </section>
   );
 }
 

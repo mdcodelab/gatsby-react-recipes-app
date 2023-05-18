@@ -17,7 +17,7 @@ export default function Home() {
             <h4>No Fluff, just Recipes</h4>
           </div>
         </header>
-        <Gallery></Gallery>
+        
       </main>
       <AllRecipes></AllRecipes>
     </Layout>
