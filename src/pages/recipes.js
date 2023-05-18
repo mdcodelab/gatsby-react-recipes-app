@@ -1,19 +1,17 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import styled from "styled-components"
+import AllRecipes from '../components/AllRecipes';
 
-const recipes = () => {
+const Recipes = () => {
   return (
     <Layout>
-        <Wrapper>
-            <h2>recipes page</h2>
-        </Wrapper>
+        <main className="page">
+            <AllRecipes></AllRecipes>
+        </main>
     </Layout>
   );
 }
 
-const Wrapper = styled.div `
 
-`;
-
-export default recipes;
+export default Recipes;

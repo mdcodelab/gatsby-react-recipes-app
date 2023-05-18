@@ -3,6 +3,7 @@ import {Link} from "gatsby";
 import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import Gallery from "../components/Gallery";
+import AllRecipes from "../components/AllRecipes";
 
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         </header>
         <Gallery></Gallery>
       </main>
+      <AllRecipes></AllRecipes>
     </Layout>
   );
 }
