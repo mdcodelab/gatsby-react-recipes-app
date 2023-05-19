@@ -3,7 +3,7 @@ import {Link} from "gatsby";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 
-const RecipesList = ({recipes}) => {
+const RecipesList = ({recipes=[]}) => {
   return (
     <div className="recipes-list">
       {recipes.map((recipe) => {

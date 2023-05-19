@@ -1,7 +1,12 @@
-import React from 'react';
-import Layout from '../components/Layout';
+import React from "react";
+import Layout from "../components/Layout";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const contact = () => {
+const Contact = () => {
+  const data = useStaticQuery(query);
+  console.log(data.allContentfulRecipe.nodes);
+
   return (
     <Layout>
       <main className="page">
@@ -28,26 +33,84 @@ const contact = () => {
           <article>
             <form className="form contact-form">
               <div className="form-row">
-                <label htmlFor="name" className="form-label">Your mane</label>
-                <input type="text" name="name" id="name" className="form-input"></input>
+                <label htmlFor="name" className="form-label">
+                  Your name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="form-input"
+                ></input>
               </div>
               <div className="form-row">
-                <label htmlFor="email" className="form-label">Your email</label>
-                <input type="email" name="email" id="email" className="form-input"></input>
+                <label htmlFor="email" className="form-label">
+                  Your email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="form-input"
+                ></input>
               </div>
               <div className="form-row">
-                <label htmlFor="message" className="form-label">Message</label>
-                <textarea cols="30" roes="10" name="message" id="message" className="form-textarea"></textarea>
-                <button type="submit" className="btn btn-block">Submit</button>
+                <label htmlFor="message" className="form-label">
+                  Message
+                </label>
+                <textarea
+                  cols="30"
+                  rows="10"
+                  name="message"
+                  id="message"
+                  className="form-textarea"
+                ></textarea>
+                <button type="submit" className="btn btn-block">
+                  Submit
+                </button>
               </div>
             </form>
           </article>
         </section>
+        <section className="featured-recipes">
+          <h5>Look At These Awesome Recipes!</h5>
+          <div className="featured-list">
+            {data.allContentfulRecipe.nodes.map((recipe) => {
+              const { id, title, image, prepTime, cookTime } = recipe;
+              return (
+                <Link key={id} to={`/recipes/${title}`}>
+                  <GatsbyImage image={getImage(image)} alt={title} />
+                  <h6>{title}</h6>
+                  <p>
+                    Prep: {prepTime} | Cook: {cookTime}
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
       </main>
     </Layout>
   );
-}
+};
 
+const query = graphql`
+  query {
+    allContentfulRecipe(
+      sort: { fields: title, order: ASC }
+      filter: { featured: { eq: true } }
+    ) {
+      nodes {
+        id
+        title
+        cookTime
+        prepTime
+        image {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+      }
+    }
+  }
+`;
 
-
-export default contact;
+export default Contact;
