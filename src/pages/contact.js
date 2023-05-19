@@ -12,7 +12,7 @@ const Contact = () => {
       <main className="page">
         <section className="contact-container">
           <article className="info">
-            <h3>Want to get in touch</h3>
+            <h3>Want to get in touch?</h3>
             <p>
               If you have any questions or concerns, please don't hesitate to
               reach out to us. Our friendly customer support team is available
@@ -78,11 +78,11 @@ const Contact = () => {
             {data.allContentfulRecipe.nodes.map((recipe) => {
               const { id, title, image, prepTime, cookTime } = recipe;
               return (
-                <Link key={id} to={`/recipes/${title}`}>
-                  <GatsbyImage image={getImage(image)} alt={title} />
-                  <h6>{title}</h6>
+                <Link key={id} to={`/recipes/${title}`} className="featured-recipe">
+                  <GatsbyImage image={getImage(image)} alt={title} className="featured-recipe-img"/>
+                  <h5>{title}</h5>
                   <p>
-                    Prep: {prepTime} | Cook: {cookTime}
+                    Prep: {prepTime} min | Cook: {cookTime} min
                   </p>
                 </Link>
               );

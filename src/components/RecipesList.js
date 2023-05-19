@@ -11,7 +11,7 @@ const RecipesList = ({recipes=[]}) => {
         return <Link to={`/${title}`} key={id} className="recipe">
         <div className="recipe-content">
             <GatsbyImage image={getImage(image.gatsbyImageData)} className="recipe-img" alt={title}></GatsbyImage>
-            {title}
+            <h5>{title}</h5>
             <p>Prep: {prepTime} min | Cook: {cookTime} min</p>
             </div>
         </Link>

@@ -50,8 +50,8 @@ const About = () => {
             {data.allContentfulRecipe.nodes.map((recipe) => {
               const { id, title, image, prepTime, cookTime } = recipe;
               return (
-                <Link key={id} to={`/recipes/${title}`}>
-                  <GatsbyImage image={getImage(image)} alt={title} />
+                <Link key={id} to={`/recipes/${title}`} className="recipe">
+                  <GatsbyImage image={getImage(image)} alt={title} className="recipe-img"/>
                   <h6>{title}</h6>
                   <p>
                     Prep: {prepTime} | Cook: {cookTime}
