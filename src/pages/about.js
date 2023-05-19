@@ -50,11 +50,19 @@ const About = () => {
             {data.allContentfulRecipe.nodes.map((recipe) => {
               const { id, title, image, prepTime, cookTime } = recipe;
               return (
-                <Link key={id} to={`/recipes/${title}`} className="recipe">
-                  <GatsbyImage image={getImage(image)} alt={title} className="recipe-img"/>
-                  <h6>{title}</h6>
+                <Link
+                  key={id}
+                  to={`/recipes/${title}`}
+                  className="featured-recipe"
+                >
+                  <GatsbyImage
+                    image={getImage(image)}
+                    alt={title}
+                    className="featured-recipe-img"
+                  />
+                  <h5>{title}</h5>
                   <p>
-                    Prep: {prepTime} | Cook: {cookTime}
+                    Prep: {prepTime} min | Cook: {cookTime} min
                   </p>
                 </Link>
               );
