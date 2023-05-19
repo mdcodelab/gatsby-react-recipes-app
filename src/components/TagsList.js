@@ -5,7 +5,7 @@ const TagsList = ({recipes}) => {
   const tags = setUpTags(recipes);
   console.log(tags);
   return (
-    <div>
+    <div className="tags-list">
       TagsList
     </div>
   );

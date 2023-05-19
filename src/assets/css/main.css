@@ -538,12 +538,28 @@ div.main-hero {
 
 @media only screen and (max-width: 900px) {
   .main-hero h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
   }
   .main-hero h5 {
     font-size: 1rem;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
 
 /*#########*/
 /* Recipes */
@@ -554,28 +570,51 @@ div.main-hero {
   max-width: var(--max-width);
   margin: 0 auto;
   margin-bottom: 3rem;
-  border: 2px solid black;
   justify-content: space-between;
+  justify-content: center;
 }
 
 .recipes-list {
+  flex: 3;
   display: flex;
   flex-wrap: wrap;
 }
 
-recipe {
+.tags-list {
+  flex: 1;
+}
+
+@media (max-width: 992px) {
+  .recipes-container {
+    flex-direction: column;
+  }
+  .recipes-list {
+    flex: none;
+  }
+  .tags-list {
+    flex: none;
+  }
+}
+
+.recipe {
   display: block;
+  box-shadow: var(--shadow-2);
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: 15rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  align-self: center;
 }
 
 .recipe-content {
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-3);
-  margin-left: 1.5rem;
 }
 .recipe-img {
   height: 12rem;
-  width: 15rem;
+  width: 100%;
   border-radius: var(--borderRadius);
 }
 
@@ -583,8 +622,11 @@ recipe {
   margin-bottom: 0;
   margin-top: 0.25rem;
   line-height: 1;
-  color: var(--textColor);
+  color: var(--grey-700);
   font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  letter-spacing: 0.15rem;
 }
 .recipe p {
   margin-bottom: 0;
