@@ -1,7 +1,7 @@
 const setUpTags = recipes => {
     let allTags={};
-    recipes.forEach((recipe) => {
-        recipe.content.tags.forEach((tag) => {
+    recipes.forEach((recipe) => {     //object of 9 arrays
+        recipe.content.tags.forEach((tag) => {  //array level
             if(allTags[tag]) {
                 allTags[tag]=allTags[tag]+1
             } else {

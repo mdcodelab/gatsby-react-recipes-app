@@ -26,7 +26,7 @@ const AllRecipes = () => {
     const data = useStaticQuery(query);
     console.log(data);
     const recipes=data.allContentfulRecipe.nodes;
-    console.log(recipes);  //arrray of objects
+    console.log(recipes);  //array of objects
 
   return (
     <section className="recipes-container">
