@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 
-function RecipeTemplate() {
+function RecipeTemplate(prop) {
+  console.log(prop);
   return (
     <div>
-      <h4>recipe template</h4>
+      <h4>{prop.params.title}</h4>
     </div>
   );
 }
