@@ -724,6 +724,56 @@ height: 16rem;
   }
 }
 
+/*#########*/
+/* Tags */
+/*#########*/
+
+.tags-page {
+  display: grid;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+.tag {
+  background: var(--grey-700);
+  border-radius: var(--borderRadius);
+  text-align: center;
+  color: var(--white);
+  transition: var(--transition);
+  padding: 0.75rem 0;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-1);
+  letter-spacing: 0.1rem;
+}
+.tag:hover {
+  background: var(--primary-500);
+}
+
+.tag :first-child {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.tag h5,
+.tag p {
+  margin-bottom: 0;
+}
+.tag h5 {
+  font-weight: 600;
+}
+@media screen and (min-width: 576px) {
+  .tags-page {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 992px) {
+  .tags-page {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 
 
 
