@@ -6,12 +6,19 @@ import AllRecipes from '../components/AllRecipes';
 const Recipes = () => {
   return (
     <Layout>
-        <main className="page">
+        <Main className="page">
             <AllRecipes></AllRecipes>
-        </main>
+        </Main>
     </Layout>
   );
 }
+
+const Main= styled.main `
+margin-top: 3rem;
+@media (max-width: 992px) {
+  margin-top: 5rem;
+}
+`;
 
 
 export default Recipes;

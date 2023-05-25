@@ -2,10 +2,11 @@ import React from "react";
 import Layout from "../components/Layout";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
+import slugify from "slugify";
 
 const Contact = () => {
   const data = useStaticQuery(query);
-  console.log(data.allContentfulRecipe.nodes);
+  //console.log(data.allContentfulRecipe.nodes);
 
   return (
     <Layout>
@@ -76,9 +77,11 @@ const Contact = () => {
           <h5>Look At These Awesome Recipes!</h5>
           <div className="featured-list">
             {data.allContentfulRecipe.nodes.map((recipe) => {
-              const { id, title, image, prepTime, cookTime } = recipe;
+              const { id, title, image, prepTime, cookTime} = recipe;
+              const slug = slugify(title, { lower: true });
+              
               return (
-                <Link key={id} to={`/recipes/${title}`} className="featured-recipe">
+                <Link key={id} to={`/${slug}`} className="featured-recipe">
                   <GatsbyImage image={getImage(image)} alt={title} className="featured-recipe-img"/>
                   <h5>{title}</h5>
                   <p>
