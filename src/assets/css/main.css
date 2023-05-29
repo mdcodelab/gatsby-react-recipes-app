@@ -161,6 +161,7 @@ ul {
   width: 100%;
   display: inline-block;
   margin-top: 2rem;
+  padding: 0.5rem 0;
 }
 
 /* alerts */
@@ -326,7 +327,7 @@ Navbar
 
 .contact-link a {
   padding: 0.15rem 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 a.active-link {
