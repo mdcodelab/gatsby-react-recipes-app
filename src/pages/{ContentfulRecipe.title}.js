@@ -24,7 +24,7 @@ function RecipeTemplate({data}) {
               ></GatsbyImage>
               <article className="recipe-info">
                 <h2>{title}</h2>
-                <p>{description}</p>
+                <p style={{textAlign: "justify"}}>{description}</p>
                 <div className="recipe-icons">
                   <article>
                     <BsClock></BsClock>
@@ -60,12 +60,12 @@ function RecipeTemplate({data}) {
                 <h4>Instructions</h4>
                 {instructions.map((item, index) => {
                   return (
-                    <div className="single-instruction">
+                    <div className="single-instruction" key={index}>
                       <header>
                         <p>Step: {index + 1}</p>
                         <div></div>
                       </header>
-                      <p>{item}</p>
+                      <p className="instructionsContent">{item}</p>
                     </div>
                   );
                 })}
