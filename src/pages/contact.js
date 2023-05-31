@@ -32,7 +32,10 @@ const Contact = () => {
             </p>
           </article>
           <article>
-            <form className="form contact-form">
+            <form
+              className="form contact-form"
+              action="https://formspree.io/f/mayzzglq"
+              method="POST">
               <div className="form-row">
                 <label htmlFor="name" className="form-label">
                   Your name
@@ -77,12 +80,16 @@ const Contact = () => {
           <h5>Look At These Awesome Recipes!</h5>
           <div className="featured-list">
             {data.allContentfulRecipe.nodes.map((recipe) => {
-              const { id, title, image, prepTime, cookTime} = recipe;
+              const { id, title, image, prepTime, cookTime } = recipe;
               const slug = slugify(title, { lower: true });
-              
+
               return (
                 <Link key={id} to={`/${slug}`} className="featured-recipe">
-                  <GatsbyImage image={getImage(image)} alt={title} className="featured-recipe-img"/>
+                  <GatsbyImage
+                    image={getImage(image)}
+                    alt={title}
+                    className="featured-recipe-img"
+                  />
                   <h5>{title}</h5>
                   <p>
                     Prep: {prepTime} min | Cook: {cookTime} min
