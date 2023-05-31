@@ -4,6 +4,7 @@ import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import { getImage } from "gatsby-plugin-image";
 import slugify from "slugify";
+import SEO from "../components/SEO";
 
 const About = () => {
   const data = useStaticQuery(query);
@@ -11,6 +12,7 @@ const About = () => {
 
   return (
     <Layout>
+    <SEO title="About"></SEO>
       <main className="page">
         <section className="about-page">
           <article>

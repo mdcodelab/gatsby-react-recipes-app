@@ -3,6 +3,8 @@ import Layout from "../components/Layout";
 import styled from "styled-components";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import setUpTags from "../utils/setUpTags";
+import SEO from "../components/SEO";
+
 
 export const query = graphql`
   query {
@@ -22,6 +24,7 @@ const Tags = () => {
 
   return (
     <Layout>
+    <SEO title="Tgs"></SEO>
       <main className="page">
         <section className="tags-page">
           {sortTags.map((tag, index) => {

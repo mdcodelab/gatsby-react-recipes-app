@@ -3,6 +3,8 @@ import Layout from "../components/Layout";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { StaticImage, GatsbyImage, getImage } from "gatsby-plugin-image";
 import slugify from "slugify";
+import SEO from "../components/SEO";
+
 
 const Contact = () => {
   const data = useStaticQuery(query);
@@ -10,6 +12,7 @@ const Contact = () => {
 
   return (
     <Layout>
+    <SEO title="Contact"></SEO>
       <main className="page">
         <section className="contact-container">
           <article className="info">

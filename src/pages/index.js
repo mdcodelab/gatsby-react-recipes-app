@@ -10,7 +10,7 @@ import SEO from "../components/SEO";
 export default function Home() {
   return (
     <Layout>
-    <SEO></SEO>
+    <SEO title="Home Page" description="This is the home page"></SEO>
       <main className="page">
         <header className="hero">
           <div className="main-hero">
