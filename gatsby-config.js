@@ -52,10 +52,11 @@ module.exports = {
       options: {
         fonts: [
           `Montserrat\:300,400,500,600`,
-          `sans-serif\:300,400,400i,500, 600, 700`, 
+          `sans-serif\:300,400,400i,500, 600, 700`,
         ],
         display: "swap",
       },
     },
+    `gatsby-plugin-react-helmet`
   ],
 };

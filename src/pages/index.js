@@ -4,11 +4,13 @@ import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import Gallery from "../components/Gallery";
 import AllRecipes from "../components/AllRecipes";
+import SEO from "../components/SEO";
 
 
 export default function Home() {
   return (
     <Layout>
+    <SEO></SEO>
       <main className="page">
         <header className="hero">
           <div className="main-hero">
