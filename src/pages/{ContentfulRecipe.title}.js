@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import {BsClockHistory, BsClock, BsPeople} from "react-icons/bs";
 import Layout from "../components/Layout";
 import styled from "styled-components";
+import SEO from "../components/SEO"
 
 function RecipeTemplate({data}) {
   console.log(data);
@@ -12,7 +13,8 @@ function RecipeTemplate({data}) {
   const {ingredients, instructions, tags, tools}=content
   
   return (
-    <Layout>
+    <Layout> 
+      <SEO title={title}></SEO>
       <main className="page">
         <Wrapper>
           <div className="recipe-page">
@@ -24,7 +26,7 @@ function RecipeTemplate({data}) {
               ></GatsbyImage>
               <article className="recipe-info">
                 <h2>{title}</h2>
-                <p style={{textAlign: "justify"}}>{description}</p>
+                <p style={{ textAlign: "justify" }}>{description}</p>
                 <div className="recipe-icons">
                   <article>
                     <BsClock></BsClock>
