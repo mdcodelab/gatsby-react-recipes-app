@@ -5,7 +5,7 @@
 }
 /* fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Sacramento&display=swap');
 html {
   font-size: 100%;
 } /*16px*/
@@ -71,6 +71,7 @@ body {
   color: var(--textColor);
   scrollbar-width: thin;
   scrollbar-track-color: var(--white);
+  font-family: "Montserrat", sans-serif;
 }
 ::-webkit-scrollbar-thumb {
   width: 5px;
@@ -466,6 +467,7 @@ About Page
   font-weight: bold;
 }
 .about-page {
+  margin-top: 3rem;
   display: grid;
   gap: 2rem 4rem;
   padding-bottom: 3rem;

@@ -1,5 +1,4 @@
 /**
- * /**
  * Configure your Gatsby site with this file.
  *
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
@@ -7,9 +6,7 @@
 
 /**
  * @type {import('gatsby').GatsbyConfig}
- * 
  */
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -26,7 +23,6 @@ module.exports = {
       { name: "john", location: "boston" },
     ],
   },
-  
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
@@ -40,9 +36,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        // The unique name for each instance
         name: `images`,
-        // Path to the directory
         path: `${__dirname}/src/assets/img`,
       },
     },
@@ -50,8 +44,17 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `t3wqqju9q5n4`,
-        // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_API_KEY
+        accessToken: process.env.CONTENTFUL_API_KEY,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Montserrat\:300,400,500,600`,
+          `sans-serif\:300,400,400i,500, 600, 700`, 
+        ],
+        display: "swap",
       },
     },
   ],
