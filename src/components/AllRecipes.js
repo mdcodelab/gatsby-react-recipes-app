@@ -42,16 +42,18 @@ const AllRecipes = () => {
 };
 
 const Wrapper = styled.section`
-  @media (min-width: 992px) {
+  @media only screen and (min-width: 992px) {
     display: flex;
     width: 90vw;
     max-width: var(--max-width);
-    margin: 2rem auto;
+    margin: 0 auto;
+    margin-bottom: 2rem;
     justify-content: center;
   }
   @media only screen and (max-width: 992px) {
     flex-direction: column;
     margin-bottom: 3rem;
+    margin-top: -3rem;
   }
 `;
 

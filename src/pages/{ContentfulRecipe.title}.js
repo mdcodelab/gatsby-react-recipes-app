@@ -19,11 +19,7 @@ function RecipeTemplate({data}) {
         <Wrapper>
           <div className="recipe-page">
             <section className="recipe-hero">
-              <GatsbyImage
-                image={pathToImage}
-                alt={title}
-                className="about-img"
-              ></GatsbyImage>
+              <GatsbyImage image={pathToImage} alt={title} className="about-img"></GatsbyImage>
               <article className="recipe-info">
                 <h2>{title}</h2>
                 <p style={{ textAlign: "justify" }}>{description}</p>
@@ -57,8 +53,8 @@ function RecipeTemplate({data}) {
               </article>
             </section>
 
-            <section className="recipe-content">
-              <article>
+            <Section className="general" style={{margin: "2rem auto"}}>
+              <article className="first-column">
                 <h4>Instructions</h4>
                 {instructions.map((item, index) => {
                   return (
@@ -94,7 +90,7 @@ function RecipeTemplate({data}) {
                   })}
                 </div>
               </article>
-            </section>
+            </Section>
           </div>
         </Wrapper>
       </main>
@@ -126,10 +122,16 @@ export const query = graphql`
 const Wrapper = styled.div`
   .recipe-hero {
     display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
     gap: 3rem;
   }
   .recipe-hero .about-img {
     height: 400px;
+    border-radius: 0.2rem;
+  }
+  .recipe-hro .recipe-info {
+    margin: 0 auto;
   }
   .recipe-icons {
     display: grid;
@@ -159,6 +161,7 @@ const Wrapper = styled.div`
     font-size: 0.7em;
     font-weight: 600;
   }
+
   .recipe-tags a {
     background: var(--primary-500);
     border-radius: var(--borderRadius);
@@ -167,28 +170,39 @@ const Wrapper = styled.div`
     margin: 0 0.25rem;
     text-transform: capitalize;
   }
-  @media screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) {
+    .recipe-info h2 {
+      text-align: center;
+    }
     .recipe-hero {
       grid-template-columns: 4fr 5fr;
       align-items: center;
     }
   }
-  .recipe-content {
-    padding: 3rem 0;
-    display: grid;
-    gap: 2rem 5rem;
+`;
+
+const Section = styled.section`
+  display: flex;
+
+  margin: 0 auto;
+  margin-top: 2rem;
+  justify-content: space-between;
+
+  .first-column {
+    width: 70%;
   }
-  @media screen and (min-width: 992px) {
-    .recipe-content {
-      grid-template-columns: 2fr 1fr;
-    }
+
+  .second-column {
+    width: 25%;
   }
+
   .single-instruction header {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1.5rem;
     align-items: center;
   }
+
   .single-instruction header p {
     text-transform: uppercase;
     font-weight: 600;
@@ -199,23 +213,32 @@ const Wrapper = styled.div`
   .single-instruction header div {
     height: 1px;
     background: var(--grey-500);
+    width: 95%;
   }
 
-  .second-column {
-    display: grid;
-    row-gap: 2rem;
-  }
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: stretch;
 
-  .single-ingredient {
-    border-bottom: 1px solid var(--grey-500);
-    padding-bottom: 0.75rem;
+    .first-column,
+    .second-column {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .second-column {
+      margin-top: 1rem;
+    }
   }
-  .single-tool {
-    border-bottom: 1px solid var(--grey-500);
-    padding-bottom: 0.75rem;
-    color: var(--primary-500);
-    text-transform: capitalize;
+  .single-instruction header div {
+    width: 100%;
+
   }
 `;
 
+
+
+
+
 export default RecipeTemplate;
+
+
