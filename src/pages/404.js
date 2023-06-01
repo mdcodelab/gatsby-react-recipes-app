@@ -12,7 +12,7 @@ const Error = () => {
         <section>
           <h1>404</h1>
           <h3>Page not found</h3>
-          <Link to="/">Back Home</Link>
+          <Link to="/" className="btn">Back Home</Link>
         </section>
       </Wrapper>
     </Layout>
@@ -20,9 +20,14 @@ const Error = () => {
 }
 
 const Wrapper = styled.div `
-height: calc()(1--vh - 10rem);
+height: calc()(100vh - 10rem);
 h1, h3 {
   text-align: center;
+}
+a {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 `;
 
