@@ -20,7 +20,16 @@ const Error = () => {
 }
 
 const Wrapper = styled.div `
-height: calc()(100vh - 10rem);
+height: calc(100vh - 10rem);
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+section {
+width: 250px;
+height: 250px;
+}
 h1, h3 {
   text-align: center;
 }
